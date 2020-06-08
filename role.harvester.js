@@ -12,7 +12,6 @@ var roleHarvester = {
             if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
             }
-            console.log(creep.room.controller.sign);
             if(creep.room.controller.sign['text'] != "Warning! Matt's Territory") {
                 if(creep.signController(creep.room.controller, "Warning! Matt's Territory") == ERR_NOT_IN_RANGE) {
                     creep.moveTo(creep.room.controller);

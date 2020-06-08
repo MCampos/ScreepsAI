@@ -67,6 +67,36 @@ var roleDrepair = {
                     }
                 }
             );
+            var StructureToRepair6 = creep.room.find(FIND_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_RAMPART
+                            || structure.structureType == STRUCTURE_TOWER
+                            || structure.structureType == STRUCTURE_WALL)
+                            && structure.hits < structure.hitsMax
+                            && structure.hits < 100000000;
+                    }
+                }
+            );
+            var StructureToRepair7 = creep.room.find(FIND_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_RAMPART
+                            || structure.structureType == STRUCTURE_TOWER
+                            || structure.structureType == STRUCTURE_WALL)
+                            && structure.hits < structure.hitsMax
+                            && structure.hits < 200000000;
+                    }
+                }
+            );
+            var StructureToRepair8 = creep.room.find(FIND_STRUCTURES, {
+                    filter: (structure) => {
+                        return (structure.structureType == STRUCTURE_RAMPART
+                            || structure.structureType == STRUCTURE_TOWER
+                            || structure.structureType == STRUCTURE_WALL)
+                            && structure.hits < structure.hitsMax
+                            && structure.hits < 30000000;
+                    }
+                }
+            );
             if(StructureToRepair.length > 0) {
                 console.log('Structures need repair:'+ StructureToRepair.length)
                 creep.moveTo(StructureToRepair[0]);
@@ -89,6 +119,18 @@ var roleDrepair = {
                 console.log('Structures need repair5:'+ StructureToRepair5.length)
                 creep.moveTo(StructureToRepair5[0]);
                 creep.repair(StructureToRepair5[0]);
+            } else if (StructureToRepair6.length > 0) {
+                console.log('Structures need repair6:'+ StructureToRepair5.length)
+                creep.moveTo(StructureToRepair6[0]);
+                creep.repair(StructureToRepair6[0]);
+            } else if (StructureToRepair7.length > 0) {
+                console.log('Structures need repair7:'+ StructureToRepair5.length)
+                creep.moveTo(StructureToRepair7[0]);
+                creep.repair(StructureToRepair7[0]);
+            } else if (StructureToRepair8.length > 0) {
+                console.log('Structures need repair8:'+ StructureToRepair5.length)
+                creep.moveTo(StructureToRepair8[0]);
+                creep.repair(StructureToRepair8[0]);
             } else {
                 creep.moveTo(home[0], {visualizePathStyle: {stroke: '#ffffff'}});
             }
